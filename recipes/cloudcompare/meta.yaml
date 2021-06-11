@@ -1,0 +1,64 @@
+{% set name = "cloudcompare" %}
+{% set version = "2.11.3" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  path: /Users/hobu/dev/git/CloudCompare
+
+  #  git_url: https://github.com/hobu/trunk.git
+  #  git_rev: pdal
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - ninja
+    - cmake
+
+  host:
+    - qt
+    - pdal
+    - pcl
+    - xerces-c
+    - zlib
+    - ffmepg  # [ not osx ]
+    - eigen
+    - shapelib
+
+  run:
+    - qt
+    - pdal
+    - pcl
+    - xerces-c
+    - zlib
+    - ffmepg  # [ not osx ]
+    - eigen
+    - shapelib
+
+      #test:
+  #
+  #
+
+about:
+  home: https://www.danielgm.net/cc/ https://github.com/CloudCompare/CloudCompare
+
+  license: GPL-2.0-or-later
+
+  summary: '3D point cloud and mesh processing software'
+
+  description: |
+    CloudCompare is a 3D point cloud processing software
+    (such as those obtained with a laser scanner). It can also handle triangular meshes and calibrated images.
+
+  doc_url: https://www.danielgm.net/cc/documentation.html
+  dev_url: https://github.com/CloudCompare/CloudCompare
+
+extra:
+  recipe-maintainers:
+    - hobu
