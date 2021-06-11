@@ -6,8 +6,10 @@ package:
   version: {{ version }}
 
 source:
-  git_url: https://github.com/hobu/CloudCompare.git
-  git_rev: master
+  path: /Users/hobu/dev/git/CloudCompare
+
+  #  git_url: https://github.com/hobu/trunk.git
+  #  git_rev: pdal
 
 build:
   number: 0
